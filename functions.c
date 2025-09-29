@@ -62,8 +62,8 @@ int print_binary(unsigned int n)
 {
 	int count = 0;
 
-	if (n / 10)
-		count += print_binary(n / 10);
-	count += _putchar(n % 10 + '0');
+	if (n / 2)
+		count += print_binary(n / 2);
+	count += _putchar(n % 2 + '0');
 	return (count);
 }
