@@ -51,3 +51,19 @@ int print_number(int n)
 	count += _putchar(num % 10 + '0');
 	return (count);
 }
+
+/**
+ * print_binary - print an unsigned int binary
+ * @n: number to print
+ *
+ * Return: number of charecters printed
+ **/
+int print_binary(unsigned int n)
+{
+	int count = 0;
+
+	if (n / 10)
+		count += print_binary(n / 10);
+	count += _putchar(n % 10 + '0');
+	return (count);
+}
