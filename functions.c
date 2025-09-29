@@ -41,7 +41,7 @@ int print_number(int n)
 
 	if (n < 0)
 	{
-		count += _putchar('_');
+		count += _putchar('-');
 		num = -n;
 	}
 	else
