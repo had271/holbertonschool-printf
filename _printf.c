@@ -1,5 +1,8 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * _printf - produces output according to a format.
@@ -13,7 +16,7 @@ int count = 0;
 
 if (!format || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
-va_strat(ap, format);
+va_start(args, format);
 
 while (*format)
 {
@@ -25,7 +28,7 @@ while (*format)
 		if (*format == 'c')
 			count += _putchar(va_arg(args, int));
 		else if (*format == 's')
-			count += print_string(va_arg(args, char));
+			count += print_string(va_arg(args, char *));
 		else if (*format == '%')
 			count += _putchar('%');
 		else if (*format == 'd' || *format == 'i')
