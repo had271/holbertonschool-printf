@@ -20,7 +20,7 @@ int _putchar_buffer(char c)
 }
 
 /**
- * flash_butter - ...
+ * flush_buffer - ...
  *
  * Return: void
  **/
@@ -31,4 +31,32 @@ void flush_buffer(void)
 		write(1, output_buffer, buffer_index);
 		buffer_index = 0;
 	}
+}
+
+/* Here task 7 function*/
+/**
+ * print_S -  prints the string.
+ * @str: pointer
+ *
+ * Return: number of char printed.
+ **/
+int print_S(char *str)
+{
+	int count = 0;
+
+	if (!str)
+		return (print_string("null"));
+	while (*str)
+	{
+		if (*str < 32 || *str >= 127)
+		{
+			count += _putchar_buffer('\\');
+			count += _putchar_buffer('x');
+			count += print_hex_upper((unsigned char) *str);
+		}
+		else
+			count += _putchar_buffer(*str);
+		str++;
+	}
+	return (count);
 }

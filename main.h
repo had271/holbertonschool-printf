@@ -17,4 +17,5 @@ int _putchar_buffer(char c);
 void flush_buffer(void);
 extern char output_buffer[1024];
 extern int buffer_index;
+int print_S(char *str);
 #endif

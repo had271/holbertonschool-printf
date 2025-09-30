@@ -46,6 +46,8 @@ while (*format)
 			count += print_hex_lower(va_arg(args, unsigned int));
 		else if (*format == 'X') /* X is a number in hex in upper.*/
 			count += print_hex_upper(va_arg(args, unsigned int));
+		else if (*format == 'S')
+			count += print_S(va_arg(args, char *));
 		else
 		{
 			count += _putchar_buffer('%');
