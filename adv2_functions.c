@@ -43,16 +43,22 @@ void flush_buffer(void)
 int print_S(char *str)
 {
 	int count = 0;
+	unsigned char c;
 
 	if (!str)
 		return (print_string("null"));
 	while (*str)
 	{
-		if (*str < 32 || *str >= 127)
+		c = (unsigned char) *str;
+		if (c < 32 || c >= 127)
 		{
 			count += _putchar_buffer('\\');
 			count += _putchar_buffer('x');
-			count += print_hex_upper((unsigned char) *str);
+			if (c < 16)
+			{
+				count += _putchar_buffer('0');
+			}
+			count += print_hex_upper(c);
 		}
 		else
 			count += _putchar_buffer(*str);
