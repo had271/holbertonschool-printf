@@ -51,8 +51,9 @@ int print_number(int n, int flags)
 		else if (flags & F_SPACE)
 			count += _putchar_buffer(' ');
 		num = n;
+	}
 	if (num / 10)
-		count += print_number(num / 10);
+		count += print_number(num / 10, 0);
 	count += _putchar_buffer(num % 10 + '0');
 	return (count);
 }

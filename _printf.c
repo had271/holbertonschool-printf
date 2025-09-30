@@ -35,7 +35,7 @@ while (*format)
 		else if (*format == '%')
 			count += _putchar_buffer('%');
 		else if (*format == 'd' || *format == 'i')
-			count += print_number(va_arg(args, int));
+			count += print_number(va_arg(args, int), flags);
 		else if (*format == 'b')
 			count += print_binary(va_arg(args, unsigned int));
 		else if (*format == 'u') /* Here task 4 start */
