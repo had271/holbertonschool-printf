@@ -23,7 +23,7 @@ int print_string(char *str)
 	if (!str)
 		str = "(null)";
 	while (*str)
-		count += _putchar(*str++);
+		count += _putchar_buffer(*str++);
 	return (count);
 }
 
@@ -41,14 +41,14 @@ int print_number(int n)
 
 	if (n < 0)
 	{
-		count += _putchar('-');
+		count += _putchar_buffer('-');
 		num = -n;
 	}
 	else
 		num = n;
 	if (num / 10)
 		count += print_number(num / 10);
-	count += _putchar(num % 10 + '0');
+	count += _putchar_buffer(num % 10 + '0');
 	return (count);
 }
 
@@ -64,6 +64,6 @@ int print_binary(unsigned int n)
 
 	if (n / 2)
 		count += print_binary(n / 2);
-	count += _putchar(n % 2 + '0');
+	count += _putchar_buffer(n % 2 + '0');
 	return (count);
 }
