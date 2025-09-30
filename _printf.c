@@ -58,6 +58,7 @@ while (*format)
 	format++;
 }
 va_end(args);
-return (count);
+
 flush_buffer();
+return (count);
 }
