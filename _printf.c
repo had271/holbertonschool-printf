@@ -10,7 +10,7 @@
  * Return: the number of characters printed
  **/
 char output_buffer[1024];
-int buffer_index = 0;
+int buffer_index, flags = 0;
 
 int _printf(const char *format, ...)
 {
@@ -48,6 +48,8 @@ while (*format)
 			count += print_hex_upper(va_arg(args, unsigned int));
 		else if (*format == 'S')
 			count += print_S(va_arg(args, char *));
+		else if (*format == 'p')
+			count += print_pointer(va_arg(args, void *));
 		else
 		{
 			count += _putchar_buffer('%');

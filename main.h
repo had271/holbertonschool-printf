@@ -1,5 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
+#define F_PLUS  1
+#define F_SPACE 2
+#define F_HASH  4
 
 #include <stdio.h>
 #include <unistd.h>
@@ -18,4 +21,7 @@ void flush_buffer(void);
 extern char output_buffer[1024];
 extern int buffer_index;
 int print_S(char *str);
+int print_hex_address(unsigned long int n);
+int _puts_buffer(char *str);
+int print_pointer(void *ptr);
 #endif
