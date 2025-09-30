@@ -29,11 +29,11 @@ while (*format)
 		if (*format == '\0')
 			return (-1);
 		if (*format == 'c')
-			count += _putchar(va_arg(args, int));
+			count += _putchar_buffer(va_arg(args, int));
 		else if (*format == 's')
 			count += print_string(va_arg(args, char *));
 		else if (*format == '%')
-			count += _putchar('%');
+			count += _putchar_buffer('%');
 		else if (*format == 'd' || *format == 'i')
 			count += print_number(va_arg(args, int));
 		else if (*format == 'b')
@@ -48,15 +48,16 @@ while (*format)
 			count += print_hex_upper(va_arg(args, unsigned int));
 		else
 		{
-			count += _putchar('%');
-			count += _putchar(*format);
+			count += _putchar_buffer('%');
+			count += _putchar_buffer(*format);
 		}
 
 	}
 	else
-		count += _putchar(*format);
+		count += _putchar_buffer(*format);
 	format++;
 }
 va_end(args);
 return (count);
+flush_buffer();
 }

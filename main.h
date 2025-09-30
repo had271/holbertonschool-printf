@@ -14,7 +14,7 @@ int print_octal(unsigned int n);
 int print_hex_lower(unsigned int n);
 int print_hex_upper(unsigned int n);
 int _putchar_buffer(char c);
-void flash_buffer(void);
+void flush_buffer(void);
 extern char output_buffer[1024];
 extern int buffer_index;
 #endif

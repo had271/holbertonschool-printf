@@ -24,7 +24,7 @@ int _putchar_buffer(char c)
  *
  * Return: void
  **/
-void flash_buffer(void)
+void flush_buffer(void)
 {
 	if (buffer_index > 0)
 	{
