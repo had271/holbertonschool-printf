@@ -24,11 +24,11 @@ int _putchar_buffer(char c)
  *
  * Return: void
  **/
-void flash_butter(void)
+void flash_buffer(void)
 {
-	if (butter_index > 0)
+	if (buffer_index > 0)
 	{
-		write(1, output_buffer, butter_index);
-		butter_index = 0;
+		write(1, output_buffer, buffer_index);
+		buffer_index = 0;
 	}
 }

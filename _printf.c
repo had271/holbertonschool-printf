@@ -9,6 +9,9 @@
  * @format: is a character string.
  * Return: the number of characters printed
  **/
+char output_buffer[1024];
+int buffer_index = 0;
+
 int _printf(const char *format, ...)
 {
 va_list args;
