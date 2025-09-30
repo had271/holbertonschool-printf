@@ -13,4 +13,6 @@ int print_decimal(unsigned int n);
 int print_octal(unsigned int n);
 int print_hex_lower(unsigned int n);
 int print_hex_upper(unsigned int n);
+int _putchar_buffer(char c);
+int flash_buffer(void);
 #endif
