@@ -1,8 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define F_PLUS  1
-#define F_SPACE 2
-#define F_HASH  4
+#define F_MINUS  1 
+#define F_PLUS   2
+#define F_ZERO   4
+#define F_HASH   8
+#define F_SPACE 16
 
 #include <stdio.h>
 #include <unistd.h>
@@ -24,4 +26,5 @@ int print_S(char *str);
 int print_hex_address(unsigned long int n);
 int _puts_buffer(char *str);
 int print_pointer(void *ptr);
+int get_flags(const char *format, int *i);
 #endif

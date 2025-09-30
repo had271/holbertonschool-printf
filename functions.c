@@ -34,7 +34,7 @@ int print_string(char *str)
  * Return: number of charecters printed
  **/
 
-int print_number(int n)
+int print_number(int n, int flags)
 {
 	int count = 0;
 	unsigned int num;
@@ -45,6 +45,11 @@ int print_number(int n)
 		num = -n;
 	}
 	else
+	{
+		if (flags & F_PLUS)
+			count += _putchar_buffer('+');
+		else if (flags & F_SPACE)
+			count += _putchar_buffer(' ');
 		num = n;
 	if (num / 10)
 		count += print_number(num / 10);
