@@ -30,7 +30,7 @@ int print_string(char *str)
 /**
  * print_number - print an integer
  * @n: Integer to print
- *
+ * @flags:  Calculates active flags
  * Return: number of charecters printed
  **/
 
@@ -61,15 +61,16 @@ int print_number(int n, int flags)
 /**
  * print_binary - print an unsigned int binary
  * @n: number to print
- *
+ * @flags:  Calculates active flags
  * Return: number of charecters printed
  **/
-int print_binary(unsigned int n)
+int print_binary(unsigned int n, int flags)
 {
 	int count = 0;
 
+	(void)flags;
 	if (n / 2)
-		count += print_binary(n / 2);
+		count += print_binary(n / 2, 0);
 	count += _putchar_buffer(n % 2 + '0');
 	return (count);
 }

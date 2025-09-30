@@ -37,7 +37,7 @@ while (*format)
 		else if (*format == 'd' || *format == 'i')
 			count += print_number(va_arg(args, int), flags);
 		else if (*format == 'b')
-			count += print_binary(va_arg(args, unsigned int));
+			count += print_binary(va_arg(args, unsigned int), flags);
 		else if (*format == 'u') /* Here task 4 start */
 			count += print_decimal(va_arg(args, unsigned int)); /* u is decimal.*/
 		else if (*format == 'o') /* o is an octal (base 8)*/
