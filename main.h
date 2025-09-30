@@ -9,4 +9,8 @@ int _putchar(char c);
 int print_string(char *str);
 int print_number(int n);
 int print_binary(unsigned int n);
+int print_decimal(unsigned int n);
+int print_octal(unsigned int n);
+int print_hex_lower(unsigned int n);
+int print_hex_upper(unsigned int n);
 #endif

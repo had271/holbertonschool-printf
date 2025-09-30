@@ -35,6 +35,14 @@ while (*format)
 			count += print_number(va_arg(args, int));
 		else if (*format == 'b')
 			count += print_binary(va_arg(args, unsigned int));
+		else if (*format == 'u') /* Here task 4 start */
+			count += print_decimal(va_arg(args, unsigned int)); /* u is decimal.*/
+		else if (*format == 'o') /* o is an octal (base 8)*/
+			count += print_octal(va_arg(args, unsigned int));
+		else if (*format == 'x') /* x is a number in hex in lower.*/
+			count += print_hex_lower(va_arg(args, unsigned int));
+		else if (*format == 'X') /* X is a number in hex in upper.*/
+			count += print_hex_upper(va_arg(args, unsigned int));
 		else
 		{
 			count += _putchar('%');
