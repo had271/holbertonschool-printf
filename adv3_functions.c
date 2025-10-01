@@ -1,4 +1,6 @@
 # include "main.h"
+#include <unistd.h>
+#include <limits.h>
 /**
  * _puts_buffer - prints a string using buffered putchar
  * @str: string to print
@@ -68,6 +70,11 @@ int print_long_int(long int n)
 {
 	int count = 0;
 	char c;
+
+	if (n == LONG_MIN)
+	{
+		count += write(1, "-9223372036854775808", 20);
+	}
 
 	if (n < 0)/*handle negative numbers*/
 	{
