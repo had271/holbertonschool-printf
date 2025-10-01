@@ -51,6 +51,16 @@ while (*format)
 			count += print_S(va_arg(args, char *));
 		else if (*format == 'p')
 			count += print_pointer(va_arg(args, void *));
+		else if (*format == 'l')/* here task 9 (length modifiers) */
+		{
+			if (*(format + 1) == 'd' || *(format + 1) == 'i')
+				count += print_long_int(va_arg(args, long int));
+		}
+		else if (*format == 'h')/*here task 9 */
+		{
+			if (*(format + 1) == 'd' || *(format + 1) == 'i')
+				count += print_short_int((short int)va_arg(args, int));
+		}
 		else
 		{
 			count += _putchar_buffer('%');

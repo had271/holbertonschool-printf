@@ -27,4 +27,6 @@ int print_hex_address(unsigned long int n);
 int _puts_buffer(char *str);
 int print_pointer(void *ptr);
 int get_flags(const char *format, int *i);
+int print_short_int(short int n);
+int print_long_int(long int n);
 #endif
