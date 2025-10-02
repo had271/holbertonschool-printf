@@ -57,24 +57,34 @@ while (*format)
 		else if (*format == 'b')
 		{
 			count += print_binary(va_arg(args, unsigned int), flags);
+			format++;
+			continue;
 		}
 
 		else if (*format == 'u') /* Here task 4 start */
 		{
 			count += print_decimal(va_arg(args, unsigned int)
 					, flags); /* u is decimal.*/
+			format++;
+			continue;
 		}
 		else if (*format == 'o') /* o is an octal (base 8)*/
 		{
 			count += print_octal(va_arg(args, unsigned int), flags);
+			format++;
+			continue;
 		}
 		else if (*format == 'x') /* x is a number in hex in lower.*/
 		{
 			count += print_hex_lower(va_arg(args, unsigned int), flags);
+			format++;
+			continue;
 		}
 		else if (*format == 'X') /* X is a number in hex in upper.*/
 		{
 			count += print_hex_upper(va_arg(args, unsigned int), flags);
+			format++;
+			continue;
 		}
 		else if (*format == 'S')
 		{
@@ -109,6 +119,7 @@ while (*format)
 			format++;
 		}
 	}
+	format++;
 }
 va_end(args);
 
