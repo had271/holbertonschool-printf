@@ -1,0 +1,74 @@
+.TH _PRINTF 3 2-10-2025 Printf\ 0.1 Library\ Function\ Manual
+.SH NAME
+_printf \- produces output according to a format
+.SH SYNOPSIS
+.B #include "main.h"
+.sp
+int _printf(const char *" format ", ...);
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a format string.
+It works like the standard
+.BR printf (3)
+function.
+
+The format string is composed of ordinary characters
+and conversion specifiers introduced by the percent character ('%').
+
+Supported conversion specifiers are:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a null-terminated string.
+.TP
+.B %%
+Prints a percent sign.
+.TP
+.B %d, %i
+Prints a signed decimal integer.
+.TP
+.B %u
+Prints an unsigned decimal integer.
+.TP
+.B %o
+Prints an unsigned octal number.
+.TP
+.B %x
+Prints an unsigned hexadecimal number (lowercase).
+.TP
+.B %X
+Prints an unsigned hexadecimal number (uppercase).
+.TP
+.B %b
+Prints an unsigned integer in binary.
+.TP
+.B %S
+Prints a string with non-printable characters as hex codes.
+.TP
+.B %p
+Prints a pointer address.
+
+Flags supported:
+.BR + ,
+.BR space ,
+.BR # ,
+and
+.BR 0 .
+
+Length modifiers:
+.BR l ,
+.BR h .
+
+.SH RETURN VALUE
+The number of characters printed is returned.
+On error, \-1 is returned.
+
+.SH AUTHORS
+Written by Hadeel and Lamyaa.
+
+.SH SEE ALSO
+.BR printf (3)
+
