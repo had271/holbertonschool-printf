@@ -41,13 +41,13 @@ while (*format)
 		else if (*format == 'b')
 			count += print_binary(va_arg(args, unsigned int), flags);
 		else if (*format == 'u') /* Here task 4 start */
-			count += print_decimal(va_arg(args, unsigned int)); /* u is decimal.*/
+			count += print_decimal(va_arg(args, unsigned int), flags); /* u is decimal.*/
 		else if (*format == 'o') /* o is an octal (base 8)*/
-			count += print_octal(va_arg(args, unsigned int));
+			count += print_octal(va_arg(args, unsigned int), flags);
 		else if (*format == 'x') /* x is a number in hex in lower.*/
-			count += print_hex_lower(va_arg(args, unsigned int));
+			count += print_hex_lower(va_arg(args, unsigned int), flags);
 		else if (*format == 'X') /* X is a number in hex in upper.*/
-			count += print_hex_upper(va_arg(args, unsigned int));
+			count += print_hex_upper(va_arg(args, unsigned int), flags);
 		else if (*format == 'S')
 			count += print_S(va_arg(args, char *));
 		else if (*format == 'p')
@@ -57,7 +57,7 @@ while (*format)
 			if (*(format + 1) == 'd' || *(format + 1) == 'i')
 				count += print_long_int(va_arg(args, long int));
 		}
-		if (*format == 'h')/*here task 9 */
+		else if (*format == 'h')/*here task 9 */
 		{
 			if (*(format + 1) == 'd' || *(format + 1) == 'i')
 				count += print_short_int((short int)va_arg(args, int));

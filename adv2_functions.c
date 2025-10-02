@@ -58,7 +58,7 @@ int print_S(char *str)
 			{
 				count += _putchar_buffer('0');
 			}
-			count += print_hex_upper(c);
+			count += print_hex_upper(c, 0);
 		}
 		else
 			count += _putchar_buffer(*str);
