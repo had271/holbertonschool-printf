@@ -28,7 +28,7 @@ while (*format)
 	if (*format == '%')
 	{
 		format++;
-		flags = get_flags(format, &i);
+		flags = get_flags(format);
 		if (*format == '\0')
 			return (-1);
 		if (*format == 'c')
