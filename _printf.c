@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
-int i;
 
 
 if (!format || (format[0] == '%' && format[1] == '\0'))
@@ -28,7 +27,7 @@ while (*format)
 	if (*format == '%')
 	{
 		format++;
-		flags = get_flags(format);
+		flags = get_flags(&format);
 		if (*format == '\0')
 			return (-1);
 		if (*format == 'c')

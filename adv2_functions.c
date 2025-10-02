@@ -87,12 +87,13 @@ int get_flags(const char **format)
 		found = 0;
 		for (j = 0; FLAGS_CH[j] != '\0'; j++)
 		{
-			if (**format[j] == FLAGS_CH[j])
+			if (**format == FLAGS_CH[j])
 			{
 				flags |= FLAGS_ARR[j];
 				found = 1;
 				break;
 			}
+		}
 		if (!found)
 			break;
 		(*format)++;
