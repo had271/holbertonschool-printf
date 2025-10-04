@@ -3,7 +3,7 @@
 *   [Description](#description)
 *   [Project Features](#project-features)
 *   [Man Page](#man-page)
-*   [Authors](#authors
+*   [Authors](#authors)
 ## Description
 
 `_printf` is a group project that recreates the core functionality of the standard C library's `printf` function. It provides a versatile tool for formatted output to the standard output stream. This implementation focuses on efficiency by using a local buffer to minimize `write` system calls.
